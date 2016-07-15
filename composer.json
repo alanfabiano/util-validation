@@ -1,0 +1,22 @@
+{
+    "name": "alanfabiano/util-validation",
+    "license": "MIT",
+    "description": "Laravel custom validation",
+    "keyword": ["laravel", "validation", "validate", "custom", "mask"],
+    "homepage": "https://github.com/alanfabiano/UtilValidation",
+    "authors": [
+        {
+            "name": "Alan Milani",
+            "email": "alan.fabiano@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AlanMilani\\UtilValidation\\": "src"
+        }
+    },
+    "require": {
+        "illuminate/support": "^5.2"
+    },
+    "minimum-stability": "dev"
+}
