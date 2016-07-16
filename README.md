@@ -31,6 +31,12 @@ Enter the file `validation.php` the parameters of the messages as the code below
 return [
 
 	...
+
+	/*
+    |--------------------------------------------------------------------------
+    | Custom Validation of package Util Validate
+    |--------------------------------------------------------------------------
+    */
 	
 	'phone' => 'The field :attribute does not contain a valid phone number',
 	'cpf'   => 'The field :attribute does not contain a valid number',
