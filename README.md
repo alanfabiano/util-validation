@@ -18,7 +18,9 @@ Then, update `config/app.php` by adding an entry for the service provider.
 
 ```php
 'providers' => [
-	// ...
+	
+	...
+
 	'AlanMilani\UtilValidation\UtilValidationServiceProvider::class',
 ];
 ```
@@ -27,8 +29,11 @@ Enter the file `validation.php` the parameters of the messages as the code below
 
 ```php
 return [
+
 	...
+	
 	'phone' => 'The field :attribute does not contain a valid phone number',
+
 ];
 ```
 
@@ -49,7 +54,4 @@ return [
 
 ## Copyright and License
 
-Util-Validate was written by 'Alan Milani' and released under the MIT License. 
-See the LICENSE file for details.
-
-Copyright 2016 Alan Milani
+Util-Validate was written by Alan Milani at july 2016.
