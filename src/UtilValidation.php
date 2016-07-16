@@ -1,6 +1,4 @@
-<?php
-
-
+<?php 
 namespace AlanMilani\UtilValidation;
 
 /**
@@ -9,14 +7,25 @@ namespace AlanMilani\UtilValidation;
  * alan.fabiano@gmail.com
  */
 
+
 class UtilValidation
 {
     
 
     protected $status;
     
-    public function phone($attribute, $value)
+    /**
+     * Validate that the attribute is a phone number
+     *
+     * @param  string  $attribute
+     * @param  mixed   $value
+     * @return bool
+     */
+    public function Phone($attribute, $value)
     {
-        return ( $this->status ? true : false );
+    	if (preg_match('/^(\([1-9]{2}\))(\s)?([9]{1})?([0-9]{4})([ -.])([0-9]{4})$/', $value)) {
+			return true;
+		}
+		return false;
     }
 }

@@ -3,7 +3,7 @@
     "license": "MIT",
     "description": "Laravel custom validation",
     "keyword": ["laravel", "validation", "validate", "custom", "mask"],
-    "homepage": "https://github.com/alanfabiano/UtilValidation",
+    "homepage": "https://github.com/alanfabiano/util-validation",
     "authors": [
         {
             "name": "Alan Milani",
