@@ -11,7 +11,6 @@ namespace AlanMilani\UtilValidation;
 class UtilValidation
 {
     
-
     protected $status;
     
     /**
@@ -20,12 +19,39 @@ class UtilValidation
      * @param  string  $attribute
      * @param  mixed   $value
      * @return bool
-     */
+    */
     public function Phone($attribute, $value)
     {
     	if (preg_match('/^(\([1-9]{2}\))(\s)?([9]{1})?([0-9]{4})([ -.])([0-9]{4})$/', $value)) {
 			return true;
 		}
 		return false;
+    }
+
+
+    /**
+     * Validation for number for CPF
+     *
+     * @param  string  $attribute
+     * @param  mixed   $value
+     * @return bool
+    */
+    public static function Cpf()
+    {
+        if ($value == '00000000000' || $value == '11111111111' || $value == '22222222222' || $value == '33333333333' || $value == '44444444444' || $value == '55555555555' || $value == '66666666666' || $value == '77777777777' || $value == '88888888888' || $value == '99999999999')
+        {
+            return false;
+        }else{
+            for ($t = 9; $t < 11; $t++) {
+                for ($d = 0, $c = 0; $c < $t; $c++) {
+                    $d += $value{$c} * (($t + 1) - $c);
+                }
+                $d = ((10 * $d) % 11) % 10;
+                if ($value{$c} != $d) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

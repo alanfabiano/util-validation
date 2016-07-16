@@ -33,6 +33,7 @@ return [
 	...
 	
 	'phone' => 'The field :attribute does not contain a valid phone number',
+	'cpf'   => 'The field :attribute does not contain a valid number',
 
 ];
 ```
@@ -47,7 +48,8 @@ return [
 	public function rules()
 	{
     	return [
-    		'field_name'  => 'phone'
+    		'field_phone' => 'phone',
+    		'field_cpf'   => 'cpf', 
     	];
     }
 ```
