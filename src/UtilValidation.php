@@ -55,4 +55,23 @@ class UtilValidation
             return true;
         }
     }
+
+
+    /**
+     * Validation for number for Zip Code
+     *
+     * @param  string  $attribute
+     * @param  mixed   $value
+     * @return bool
+    */
+    public static function Cep($attribute, $value)
+    {
+        $value = preg_replace('/[^0-9]/', '', $value);
+        if(strlen($value) == 8){
+            return true;
+        }
+        return false;
+    }
+
+
 }

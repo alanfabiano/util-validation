@@ -40,6 +40,7 @@ return [
 	
 	'phone' => 'The field :attribute does not contain a valid phone number',
 	'cpf'   => 'The field :attribute does not contain a valid number',
+	'cep'   => 'The field :attribute does not contain a valid zip code',
 
 ];
 ```
@@ -54,8 +55,14 @@ return [
 	public function rules()
 	{
     	return [
+    		// VALID FORMAT: "(99) 99999 9999", "(99) 9999 9999"
     		'field_phone' => 'phone',
-    		'field_cpf'   => 'cpf', 
+
+    		// VALID FORMAT: "999.999.999-99"
+    		'field_cpf'   => 'cpf',
+
+    		// VALID FORMAT: "99999-999", "99999999"
+    		'field_cep'   => 'cep',
     	];
     }
 ```

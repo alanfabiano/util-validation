@@ -13,8 +13,11 @@ class UtilValidationServiceProvider extends ServiceProvider
         // Init Class validation for phone
         $this->utilValidatePhone();
 
-        // Init Class validation for phone
+        // Init Class validation for cpf
         $this->utilValidateCpf();
+
+        // Init Class validation for zip code
+        $this->utilValidateCep();        
     }
     
 
@@ -33,9 +36,15 @@ class UtilValidationServiceProvider extends ServiceProvider
 
     // Set method for validation of CPF
     public function utilValidateCpf()
-    {
-        
+    {    
         $this->app['validator']->extend('cpf', 'UtilValidation@Cpf' , $this->app['translator']->get('cpf::validation.cpf'));
+    }
+
+
+    // Set Method for validation of ZipCode
+    public function utilValidateCep()
+    {
+        $this->app['validator']->extend('cep', 'UtilValidation@Cep' , $this->app['translator']->get('cep::validation.cep'));
     }
 
 }
