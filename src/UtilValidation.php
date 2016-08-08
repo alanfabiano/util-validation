@@ -66,12 +66,10 @@ class UtilValidation
     */
     public static function Cep($attribute, $value)
     {
-        $value = preg_replace('/[^0-9]/', '', $value);
-        if(strlen($value) == 8){
+        if(preg_match('/^[0-9]{5,5}([- ]?[0-9]{3,3})?$/', $value)) {
             return true;
         }
         return false;
     }
-
 
 }
