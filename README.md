@@ -38,9 +38,10 @@ return [
     |--------------------------------------------------------------------------
     */
 	
-	'phone' => 'The field :attribute does not contain a valid phone number',
-	'cpf'   => 'The field :attribute does not contain a valid number',
-	'cep'   => 'The field :attribute does not contain a valid zip code',
+	'phone'       => 'The field :attribute does not contain a valid phone number',
+	'cpf'         => 'The field :attribute does not contain a valid number',
+	'cep'         => 'The field :attribute does not contain a valid zip code',
+    'credit_card' => 'The field :attribute does not contain a valid credit card',
 
 ];
 ```
@@ -63,10 +64,17 @@ return [
 
     		// VALID FORMAT: "99999-999", "99999999"
     		'field_cep'   => 'cep',
+
+            // VALID FORMAT: "1234.1234.1234.1234", "1234-1234-1234-1234", "1234123412341234"
+            'field_credit_card' => 'credit_card'
+
     	];
     }
 ```
 
+
 ## Copyright and License
 
 Util-Validate was written by Alan Milani at july 2016.
+
+* Updated at august 2016

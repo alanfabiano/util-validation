@@ -17,7 +17,10 @@ class UtilValidationServiceProvider extends ServiceProvider
         $this->utilValidateCpf();
 
         // Init Class validation for zip code
-        $this->utilValidateCep();        
+        $this->utilValidateCep();   
+
+        // Init Class validation for credit card
+        $this->utilValidateCreditCard();     
     }
     
 
@@ -45,6 +48,13 @@ class UtilValidationServiceProvider extends ServiceProvider
     public function utilValidateCep()
     {
         $this->app['validator']->extend('cep', 'UtilValidation@Cep' , $this->app['translator']->get('cep::validation.cep'));
+    }
+
+
+    // Set Method for validation of CreditCard
+    public function utilValidateCreditCard()
+    {
+        $this->app['validator']->extend('credit_card', 'UtilValidation@CreditCard' , $this->app['translator']->get('cep::validation.credit_card'));
     }
 
 }
