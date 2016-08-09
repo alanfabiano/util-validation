@@ -72,4 +72,21 @@ class UtilValidation
         return false;
     }
 
+
+
+    /**
+     * Validation for number for Credit Card
+     *
+     * @param  string  $attribute
+     * @param  mixed   $value
+     * @return bool
+    */
+    public static function CreditCard($attribute, $value)
+    {
+        if(preg_match('/^([0-9]{4,4})([-. ]{0,1}?)([0-9]{4,4})([-. ]{0,1}?)([0-9]{4,4})([-. ]{0,1}?)([0-9]{4,4})?$/', $value)) {
+            return true;
+        }
+        return false;
+    }
+
 }
