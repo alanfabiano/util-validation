@@ -23,7 +23,7 @@ class UtilValidationTest extends PHPUnit_Framework_TestCase
 
 
     /**
-     * unit test of current currency credit card number
+     * unit test of current credit card number
      * @author Alan Milani <alan.fabiano@gmail.com>
      * @since Ago 08, 2016
      * @return void
@@ -43,5 +43,20 @@ class UtilValidationTest extends PHPUnit_Framework_TestCase
         $this->assertEquals( false, UtilValidation::CreditCard( null, 'abcdefghijklmnopqrs' ) );
     }
 
+    /**
+     * unit test of cnpj number
+     * @author Alan Milani <alan.fabiano@gmail.com>
+     * @since Ago 08, 2016
+     * @return void
+     */
+    public function test_validate_cnpj_number()
+    {
+        $this->assertEquals(true, UtilValidation::Cnpj( null, '11.444.777/0001-61') );
+        
+        $this->assertEquals(true, UtilValidation::Cnpj( null, '11444777000161') );
+
+        $this->assertEquals(false, UtilValidation::Cnpj( null, '11111111111111') );
+
+    }
     
 }

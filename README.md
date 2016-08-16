@@ -42,6 +42,7 @@ return [
 	'cpf'         => 'The field :attribute does not contain a valid number',
 	'cep'         => 'The field :attribute does not contain a valid zip code',
     'credit_card' => 'The field :attribute does not contain a valid credit card',
+    'cnpj'        => 'The field :attribute does not contain a valid CNPJ',
 
 ];
 ```
@@ -67,6 +68,9 @@ return [
 
             // VALID FORMAT: "1234.1234.1234.1234", "1234-1234-1234-1234", "1234123412341234"
             'field_credit_card' => 'credit_card'
+
+            // VALID FORMAT: "11.444.777/0001-61", "11444777000161"
+            'field_cnpj' => 'cnpj'
 
     	];
     }

@@ -20,7 +20,10 @@ class UtilValidationServiceProvider extends ServiceProvider
         $this->utilValidateCep();   
 
         // Init Class validation for credit card
-        $this->utilValidateCreditCard();     
+        $this->utilValidateCreditCard();
+
+        // Init Class validation for credit card
+        $this->utilValidateCnpj();
     }
     
 
@@ -55,6 +58,13 @@ class UtilValidationServiceProvider extends ServiceProvider
     public function utilValidateCreditCard()
     {
         $this->app['validator']->extend('credit_card', 'UtilValidation@CreditCard' , $this->app['translator']->get('cep::validation.credit_card'));
+    }
+
+
+    // Set Method for validation of Cnpj
+    public function utilValidateCnpj()
+    {
+        $this->app['validator']->extend('cnpj', 'UtilValidation@Cnpj' , $this->app['translator']->get('cnpj::validation.cnpj'));
     }
 
 }
