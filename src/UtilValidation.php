@@ -132,7 +132,11 @@ class UtilValidation
     */
     public static function Username($attribute, $value)
     {
-        return (bool)( !preg_match( '/[^0-9a-z._-]/', $value ) );
+        if( preg_match( '/[^0-9a-z._-]/', $value ) == 0 )
+        {
+            return true;
+        }
+        return false;
     }
 
 }
