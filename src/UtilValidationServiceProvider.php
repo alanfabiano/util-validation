@@ -22,8 +22,11 @@ class UtilValidationServiceProvider extends ServiceProvider
         // Init Class validation for credit card
         $this->utilValidateCreditCard();
 
-        // Init Class validation for credit card
+        // Init Class validation for cnpj
         $this->utilValidateCnpj();
+
+        // Init Class validation for username
+        $this->utilValidateUsername();
     }
     
 
@@ -65,6 +68,13 @@ class UtilValidationServiceProvider extends ServiceProvider
     public function utilValidateCnpj()
     {
         $this->app['validator']->extend('cnpj', 'UtilValidation@Cnpj' , $this->app['translator']->get('cnpj::validation.cnpj'));
+    }
+
+
+    // Set Method for validation of username
+    public function utilValidateUsername()
+    {
+        $this->app['validator']->extend('username', 'UtilValidation@Username' , $this->app['translator']->get('username::validation.username'));
     }
 
 }

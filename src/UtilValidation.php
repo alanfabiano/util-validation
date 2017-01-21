@@ -121,4 +121,18 @@ class UtilValidation
         return $cnpj{13} == ($resto < 2 ? 0 : 11 - $resto);    
     }
 
+
+
+    /**
+     * Validation for username
+     *
+     * @param  string  $attribute
+     * @param  mixed   $value
+     * @return bool
+    */
+    public static function Username($attribute, $value)
+    {
+        return (bool)( !preg_match( '/[^0-9a-z._-]/', $value ) );
+    }
+
 }
