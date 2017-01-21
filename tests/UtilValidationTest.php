@@ -68,7 +68,6 @@ class UtilValidationTest extends PHPUnit_Framework_TestCase
      */
     public function test_validate_username()
     {
-        $this->assertEquals(false, UtilValidation::Username( null, 'my user name') );
         
         $this->assertEquals(true, UtilValidation::Username( null, 'my.user.name') );
 
@@ -76,9 +75,11 @@ class UtilValidationTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(true, UtilValidation::Username( null, 'my-user-name') );
 
+        $this->assertEquals(true, UtilValidation::Username( null, 'myusername01') );
+        
         $this->assertEquals(false, UtilValidation::Username( null, 'MyUserName') );
 
-        $this->assertEquals(true, UtilValidation::Username( null, 'myusername01') );
+        $this->assertEquals(false, UtilValidation::Username( null, 'my user name') );
     }
     
 }

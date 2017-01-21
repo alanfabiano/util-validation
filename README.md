@@ -43,6 +43,7 @@ return [
 	'cep'         => 'The field :attribute does not contain a valid zip code',
     'credit_card' => 'The field :attribute does not contain a valid credit card',
     'cnpj'        => 'The field :attribute does not contain a valid CNPJ',
+    'username'    => 'The field :attribute do not a valid username',
 
 ];
 ```
@@ -72,6 +73,8 @@ return [
             // VALID FORMAT: "11.444.777/0001-61", "11444777000161"
             'field_cnpj' => 'cnpj'
 
+            // VALID FORMAT: "username123", "user-name123", "user_name123", "user.name123"
+            'field_username' => 'username'
     	];
     }
 ```
@@ -81,4 +84,4 @@ return [
 
 Util-Validate was written by Alan Milani at july 2016.
 
-* Updated at august 2016
+* Updated at january 2017
