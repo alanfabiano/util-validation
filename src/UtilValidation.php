@@ -22,7 +22,8 @@ class UtilValidation
     */
     public function Phone($attribute, $value)
     {
-    	if (preg_match('/^(\([1-9]{2}\))(\s)?([9]{1})?([0-9]{4})([ -.])([0-9]{4})$/', $value)) {
+        $phone = preg_replace('/[0^-9]/','',$value);
+    	if (strlen($phone) == 10 or strlen($phone) == 11) {
 			return true;
 		}
 		return false;
