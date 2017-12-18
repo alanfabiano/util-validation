@@ -2,7 +2,6 @@
     "name": "alanfabiano/util-validation",
     "license": "MIT",
     "description": "Laravel custom validation",
-    "keyword": ["laravel", "validation", "validate", "custom", "mask"],
     "homepage": "https://github.com/alanfabiano/util-validation",
     "authors": [
         {
@@ -16,8 +15,9 @@
         }
     },
     "require": {
-        "illuminate/support": "^5.3",
-        "phpunit/phpunit": "~5.0"
+        "php": ">=7.0.0",
+        "illuminate/support": "^5.4",
+        "phpunit/phpunit": "~5.7"
     },
     "minimum-stability": "dev"
 }
