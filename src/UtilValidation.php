@@ -59,20 +59,23 @@ class UtilValidation
 
 
     /**
-     * Validation for number for Zip Code
+     * Validation for number for Zip Code at Pagar.me API
      *
      * @param  string  $attribute
      * @param  mixed   $value
+     * @param array $parameters
      * @return bool
     */
-    public static function Cep($attribute, $value)
+    public static function Cep($attribute, $value, $parameters = [])
     {
-        if(preg_match('/^[0-9]{5,5}([- ]?[0-9]{3,3})?$/', $value)) {
+        try{
+            $url = isset($parameters[0]) ? $parameters[0] : 'https://api.pagar.me/1/zipcodes/';
+            file_get_contents($url.$value );
             return true;
+        }catch(\Exception $e) {
+            return false;
         }
-        return false;
     }
-
 
 
     /**
