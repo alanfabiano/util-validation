@@ -22,7 +22,7 @@ class UtilValidation
     */
     public function Phone($attribute, $value)
     {
-        $phone = preg_replace('/[0^-9]/','',$value);
+        $phone = preg_replace('/[ˆ0-9]/', '', $value);
     	if (strlen($phone) == 10 or strlen($phone) == 11) {
 			return true;
 		}

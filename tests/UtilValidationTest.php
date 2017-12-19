@@ -17,17 +17,17 @@ class UtilValidationTest extends PHPUnit_Framework_TestCase
      */
     public function test_validate_zipcode_number()
     {
-        $this->assertEquals(true, UtilValidation::Cep( null, '85710000') );
+        $this->assertEquals(true, UtilValidation::Cep( null, '85710000', null) );
         
-        $this->assertEquals(true, UtilValidation::Cep( null, '85710-000') );
+        $this->assertEquals(true, UtilValidation::Cep( null, '85710-000', null) );
         
         $this->assertEquals(false, UtilValidation::Cep( null, '85710-000', ['http://correios.com/cep/']) );
 
         $this->assertEquals(false, UtilValidation::Cep( null, '85710-000', 'http://correios.com.br/cep/') );
 
-        $this->assertEquals(false, UtilValidation::Cep( null, '00000-000') );
+        $this->assertEquals(false, UtilValidation::Cep( null, '00000-000', null) );
 
-        $this->assertEquals(false, UtilValidation::Cep( null, 'abCDefGH') );
+        $this->assertEquals(false, UtilValidation::Cep( null, 'abCDefGH', null) );
         
         $this->assertEquals(true, UtilValidation::Cep( null, '85710-000', ['https://api.pagar.me/1/zipcodes/']) );
     }
